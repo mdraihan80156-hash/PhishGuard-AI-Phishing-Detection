@@ -1,0 +1,458 @@
+py<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard - AI Phishing Detection</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION BAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ <span>Phish</span>Guard
+        </div>
+
+        <div class="status">
+            <span class="status-dot"></span>
+            AI Protection Active
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <!-- =========================
+             PHISHGUARD STATISTICS
+        ========================== -->
+
+        <section class="stats-section">
+
+            <div class="stats-header">
+
+                <h2>PhishGuard Statistics</h2>
+
+                <p>
+                    Your URL scanning activity
+                </p>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <!-- Total Scans -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔍
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Total Scans
+                        </span>
+
+                        <strong id="totalScans">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Safe URLs -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        ✅
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Safe URLs
+                        </span>
+
+                        <strong id="safeScans">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Phishing URLs -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🚨
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Phishing URLs
+                        </span>
+
+                        <strong id="phishingScans">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Safe Percentage -->
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📊
+                    </div>
+
+                    <div class="stat-info">
+
+                        <span>
+                            Safe Percentage
+                        </span>
+
+                        <strong id="safePercentage">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             HERO SECTION
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="badge">
+                🛡️ AI-POWERED WEB SECURITY
+            </div>
+
+
+            <h1>
+                Detect <span>Phishing</span>
+                <br>
+                Before It's Too Late
+            </h1>
+
+
+            <p class="subtitle">
+
+                Analyze suspicious website URLs
+                using machine learning and identify
+                potential phishing threats.
+
+            </p>
+
+
+            <!-- =========================
+                 URL SCANNER
+            ========================== -->
+
+            <div class="scanner-card">
+
+                <div class="input-title">
+                    🔗 Enter Website URL
+                </div>
+
+
+                <div class="input-area">
+
+                    <input
+                        type="text"
+                        id="urlInput"
+                        placeholder="https://example.com"
+                    >
+
+
+                    <button onclick="checkURL()">
+                        🔍 Scan URL
+                    </button>
+
+                </div>
+
+
+                <p class="privacy">
+                    🔒 Your URL is analyzed securely by PhishGuard
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 RESULT
+            ========================== -->
+
+            <div id="result" class="result-card">
+
+                <div class="result-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <h3>
+                        Ready to Scan
+                    </h3>
+
+                    <p>
+                        Enter a website URL above
+                        to check its security.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FEATURES
+        ========================== -->
+
+        <section class="features">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Machine Learning
+                </h3>
+
+                <p>
+                    Uses trained machine learning
+                    algorithms to analyze URL patterns.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🔎
+                </div>
+
+                <h3>
+                    URL Analysis
+                </h3>
+
+                <p>
+                    Examines URL characteristics
+                    such as length, symbols and subdomains.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Instant Detection
+                </h3>
+
+                <p>
+                    Get a Safe or Phishing prediction
+                    within seconds.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+
+        <section class="how-section">
+
+            <h2>
+                How PhishGuard Works
+            </h2>
+
+            <p class="section-subtitle">
+                Three simple steps to protect yourself
+            </p>
+
+
+            <div class="steps">
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Enter URL
+                    </h3>
+
+                    <p>
+                        Paste the website address
+                        you want to check.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Analyze
+                    </h3>
+
+                    <p>
+                        PhishGuard extracts important
+                        URL features and sends them
+                        to the ML model.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Get Result
+                    </h3>
+
+                    <p>
+                        The system classifies the
+                        website as Safe or Phishing.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SCAN HISTORY
+        ========================== -->
+
+        <section class="history-section">
+
+
+            <div class="history-header">
+
+                <div>
+
+                    <h2>
+                        Scan History
+                    </h2>
+
+                    <p>
+                        Previous URLs analyzed by PhishGuard
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="clear-history"
+                    onclick="clearHistory()"
+                >
+                    Clear History
+                </button>
+
+            </div>
+
+
+            <div
+                id="historyList"
+                class="history-list"
+            >
+
+                <p class="no-history">
+
+                    No scans yet.
+                    Your scanned URLs will appear here.
+
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🛡️ PhishGuard
+        </div>
+
+        <p>
+            AI-Based Phishing URL Detection System
+        </p>
+
+        <p class="copyright">
+            © 2026 PhishGuard • College Project
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
